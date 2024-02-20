@@ -1,7 +1,7 @@
 let audios=document.querySelectorAll("audio");
 let playBtn=document.getElementById("play-btn");
-let backwardBtn=document.getElementById("backward-btn");
-let forwardBtn=document.getElementById("forward-btn");
+let loopBtn=document.getElementById("loop-btn");
+// let shuffleBtn=document.getElementById("shuffle-btn");
 let prevBtn=document.getElementById("prev-btn");
 let nextBtn=document.getElementById("next-btn");
 let musicSlider=document.getElementById("music-slider");
@@ -30,15 +30,22 @@ function playPause(){
     }
  }
 
-// 5 sec backward function
- function backwards(){
-    audios[i].currentTime-=5;
+// loopAudio function
+ function loopAudio(){
+    if(!audios[i].loop) {
+        audios[i].setAttribute("loop","loop");
+        loopBtn.innerHTML="<i class='bi bi-repeat-1'></i>";
+    }else{
+        audios[i].removeAttribute('loop');
+        loopBtn.innerHTML="<i class='bi bi-repeat'></i>";
+   }
+    
 }
 
 //5 sec forward function
-function forwards(){
-    audios[i].currentTime+=5;
-}
+// function shuffleAudio(){
+//     i=Math.floor(Math.random()*audios.length);    
+// }
 
 // next song function
 function nextAudio(){
@@ -132,8 +139,8 @@ function updateMusicDetails(){
 
 
 playBtn.addEventListener( "click",playPause);
-backwardBtn.addEventListener("click",backwards);
-forwardBtn.addEventListener("click",forwards);
+loopBtn.addEventListener("click",loopAudio);
+// shuffleBtn.addEventListener("click",shuffleAudio);
 nextBtn.addEventListener("click",nextAudio);
 prevBtn.addEventListener("click",prevAudio);
 volumeRange.addEventListener("change",volumeUpdate);
