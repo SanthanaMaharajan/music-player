@@ -14,26 +14,17 @@
             <div class="inner-container">
                 <div class="music-player">
                     <div class="img-container">
-                        <img src="files/img.png" alt="">
-                        <marquee behavior="scroll" direction="left" id="musicDetails">Drive-break beat-173062.mp3</marquee>
+                        <img id="song-img" class="audios" src="">                    
+                        
+                        <h3 id="song-title"></h3>
+                        <h6 id="artist"></h6>
                         <div class="volume-controls">
                             <span><i class="bi bi-headset"></i></span>
                             <input type="range" min="0" max="100" value="100" id="volume"/>
                             <span id="mute-btn"><i class='bi bi-volume-up-fill'></i></span>
                         </div>
                     </div>
-                        <div class="audios">                            
-                            <audio src="files/Drive-breakbeat-173062.mp3"></audio>
-                            <audio src="files/Baby-mandala-169039.mp3"></audio>
-                            <audio src="files/Mellow-future-bass-bounce-on-it-184234.mp3"></audio>
-                            <audio src="files/Midnight-forest-184304.mp3"></audio>
-                            <audio src="files/Coverless-book-186307.mp3"></audio>
-                            <audio src="files/Better-day-186374.mp3"></audio>
-                            <audio src="files/Sad-soul-chasing-a-feeling-185750.mp3"></audio>
-                            <audio src="files/Science-documentary-169621.mp3"></audio>
-                            <audio src="files/Separation-185196.mp3"></audio>
-                            <audio src="files/Titanium-170190.mp3"></audio>
-                        </div>
+                        
                     <div class="controls-container">
                         <div class="music-controls">
                             <label for="music-slider" id="music-countdown">00:00</label>
@@ -56,6 +47,6 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
