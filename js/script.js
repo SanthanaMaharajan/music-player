@@ -104,16 +104,12 @@ function audioCountDown(){
 
 // progress bar slider functions
 function updateSlider(){
-    let sliderTime = (audios[i].currentTime*100) / audios[i].duration;  
-    musicSlider.value = sliderTime;
+    musicSlider.value = audios[i].currentTime;
 }
 
 // slider change duration function
 musicSlider.addEventListener("change",function(){
-    clearInterval(timer);
-    let setTime=(musicSlider.value*(audios[i].duration)/100);
-    audios[i].currentTime=setTime;
-    timer=setInterval(audioCountDown,500);
+    audios[i].currentTime=musicSlider.value;
 });
 
 // volume update function
